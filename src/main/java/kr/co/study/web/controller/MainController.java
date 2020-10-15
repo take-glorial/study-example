@@ -15,12 +15,11 @@ public class MainController {
 
 	private final MainService mainService;
 
-	@RequestMapping("/")
+	@RequestMapping({"/"})
 	public String index(Model model) {
-		model.addAttribute("hello", "hello world!!");
+		model.addAttribute("hello", "Hello World");
 		model.addAttribute("userCount", mainService.getUserCount());
-
-		return "thymeleaf/index";
+		return "thymeleaf/page/index";
 	}
 
 }
