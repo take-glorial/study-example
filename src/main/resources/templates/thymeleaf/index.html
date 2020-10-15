@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>타이틀</title>
+<script href="../../dddd.js" th:href="@{/test.js}"></script>
+</head>
+<body>
+<p th:text="${hello}">헬로</p>
+
+<p th:text=" ${userCount} + '명' "> 0명 </p>
+
+<p th:text="${userCount + '명'}"> 0명 </p>
+
+<p th:text="|${userCount}명|"> 0명 </p>
+
+</body>
+
+</html>
