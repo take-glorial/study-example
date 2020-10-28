@@ -12,11 +12,14 @@ spring:
     data:
     - classpath:schema/insert.sql
     hikari:
-      #jdbc-url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
-      jdbc-url: jdbc:h2:D:\projects\study\study-example\src\main\resources\schema\testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+      jdbc-url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+      #jdbc-url: jdbc:h2:D:\projects\study\study-example\src\main\resources\schema\testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
       driver-class-name: org.h2.Driver
       username: sa
-      password: sa
+      password: sa  session:    store-type: redis
+      redis:
+    host: localhost
+    port: 6379
       
 mybatis:
   configuration:
@@ -30,3 +33,4 @@ logging:
     '[org.springframework.web]': ERROR
     '[org.springframework.security]': ERROR
     '[kr.co.study]': DEBUG
+    
