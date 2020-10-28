@@ -16,6 +16,10 @@
     <th:block layout:fragment="pageCss"></th:block>
     <th:block layout:fragment="pageScript"></th:block>
 
+    <script th:inline="javascript">
+    	const CONTEXTPATH = /*[[@{/}]]*/ "test";
+    </script>
+
 </th:block>
 
 </html>

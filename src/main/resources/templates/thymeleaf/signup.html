@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<th:block th:replace="~{ thymeleaf/fragment/common :: commonFragment }"></th:block>
+</head>
+
+<body class="d-flex flex-column">
+	<div class="row" style="margin-top:150px;">
+		<div class="col-md-6 offset-md-3">
+
+			<form id="frm" action="#" th:action="@{/signupProc}" th:object="${joinDTO}" method="post">
+				<h1>회원가입</h1>
+
+				<div class="form-group">
+					<label for="id">ID</label> <input type="text" class="form-control" th:field="*{id}" th:class="${#fields.hasErrors('id')}? form-control : form-control" />
+					<label class="err" th:if="${#fields.hasErrors('id')}" th:errors="*{id}">ID Error</label>
+				</div>
+
+				<div class="form-group">
+					<label for="name">NAME</label>
+					<input type="text" class="form-control" th:field="*{name}" th:class="${#fields.hasErrors('name')}? form-control : form-control" />
+					<label class="err" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">NAME Error</label>
+				</div>
+
+				<div class="form-group">
+					<label for="password">PASSWORD</label> <input type="text" class="form-control" th:field="*{password}" th:class="${#fields.hasErrors('password')}? form-control : form-control" />
+					<label class="err" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">PASSWORD Error</label>
+				</div>
+
+				<button type="submit" class="btn btn-primary">SAVE</button>
+
+			</form>
+
+		</div>
+	</div>
+</body>
+
+</html>
